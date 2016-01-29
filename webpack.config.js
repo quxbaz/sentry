@@ -1,6 +1,8 @@
 require('es6-promise').polyfill();
 var path = require('path');
-var resolve = path.resolve;
+var join = path.join;
+
+var dir = path.resolve(__dirname);
 
 var config = {
 
@@ -19,7 +21,10 @@ var config = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: [/node_modules/, /bower_components/],
+        include: [
+          join(dir, 'index.js'),
+          join(dir, 'test/')
+        ],
         query: {
           presets: ['es2015']
         }
@@ -28,10 +33,10 @@ var config = {
   },
 
   resolve: {
-    root: resolve(__dirname),
+    root: dir,
     extensions: ['', '.js'],
     alias: {
-      'sentry': resolve(__dirname)
+      'sentry': dir
     }
   }
 
