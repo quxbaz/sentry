@@ -1,0 +1,20 @@
+{
+  "name": "sentry",
+  "description": "Simple event emitter library",
+  "main": "index.js",
+  "authors": [
+    "quxbaz"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "https://github.com/quxbaz/sentry",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
