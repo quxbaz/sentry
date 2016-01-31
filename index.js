@@ -31,6 +31,10 @@ export default class Sentry {
       this.on(event, eventMap[event]);
   }
 
+  hasEvent(event) {
+    return this.events[event] !== undefined && this.events[event].length > 0;
+  }
+
   on(event, handler) {
     if (typeof event === 'object') {
       this._bindMap(event);

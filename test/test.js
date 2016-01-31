@@ -105,6 +105,14 @@ describe("sentry", () => {
     context.spy.should.eql(14);
   });
 
+  it("Checks if it has an event.", () => {
+    sentry.hasEvent('foo').should.be.false;
+    sentry.on('foo', () => {});
+    sentry.hasEvent('foo').should.be.true;
+    sentry.off('foo');
+    sentry.hasEvent('foo').should.be.false;
+  });
+
   describe(".off()", () => {
 
     let fn1, fn2;
